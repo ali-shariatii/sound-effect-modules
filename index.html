@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>audio</title>
+    <style>
+        .btn-hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>audio module</h3>
+    <audio id="bgMusic" autoplay>
+        <source src="bg-music.mp3" type="audio/mpeg" >
+    </audio>
+    <button onclick="playFunc();" id="playBtn" class="btn-hide">Play</button>
+    <button onclick="pauseFunc();" id="pauseBtn">Pause</button>
+
+
+<script>
+
+var bgMusic = document.getElementById("bgMusic"),
+    playBtn = document.getElementById("playBtn"),
+    pauseBtn = document.getElementById("pauseBtn");
+
+function playFunc(){
+    bgMusic.play();
+    pauseBtn.classList.remove("btn-hide");
+    playBtn.classList.add("btn-hide");
+}
+
+function pauseFunc(){
+    bgMusic.pause();
+    playBtn.classList.remove("btn-hide");
+    pauseBtn.classList.add("btn-hide");
+}
+
+</script>
+</body>
+</html>
